@@ -1,0 +1,465 @@
+/*
+Title:      	Large Width (Default) Screen LESS Styles
+Author:     	Sam Rayner - http://samrayner.com
+Created: 			2011-06-06
+*/
+
+/* LESS Helpers
+================================================== */
+
+@import "bootstrap.less";
+
+/* Variables
+-------------------------------------------------- */
+
+@bl: 				6px; 	/* typography baseline height */
+@gutter: 		2%; 	/* grid gutter width */
+@leftSide: 	16%; 	/* percentage of viewport width*/
+@rightSide: 38%; 	/* percentage of main width */
+
+@bgBase: #fffffc;
+@link: 		#936;
+
+
+/* Mixins
+-------------------------------------------------- */
+
+.image-replace {
+	display: block;
+	text-indent: 9999px;
+	overflow: hidden;
+}
+
+.fill {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.rotate(@angle: 45deg){
+	-webkit-transform: rotate(@angle);
+	-moz-transform: rotate(@angle);
+	-o-transform: rotate(@angle);
+	-ms-transform: rotate(@angle);
+	transform: rotate(@angle);
+}
+
+.light-text {
+	color: #777;
+	color: rgba(0,0,0,0.5);
+}
+
+.texture {
+	background: @bgBase url(../images/texture.png);
+}
+
+
+/* Styles
+================================================== */
+
+body {
+	background: @bgBase url(../images/texture.png);
+	min-width: 320px;
+	-webkit-font-smoothing: antialiased;	
+	font: 15px georgia, "Times New Roman", times, serif;
+	line-height: @bl*4;
+	color: #111;
+	color: rgba(0,0,0,0.8);
+}
+
+.wrapper,
+nav ul {
+	.center-block;
+	width: 90%;
+	max-width: 1200px;
+}
+
+/* stop fixed nav overlaying content */
+nav ~ * {
+	position: relative;
+	z-index: 1;
+}
+
+#main section,
+nav {
+	/*leave a small gap at top of viewport on scroll*/
+	padding-top: @bl*2;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+nav.fixed ul li.current a,
+#main aside blockquote {
+	#gradient > .vertical(#ecece9, #e2e2de);
+	.box-shadow(1px 1px 0 rgba(0,0,0,0.2));
+	.border-radius(2px);
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.7);
+}
+
+/* Typography
+-------------------------------------------------- */
+
+header,
+h1,
+#bio {
+	font-family: "PT Serif", georgia, "Times New Roman", times, serif;
+}
+
+nav,
+.referee,
+footer {
+	font-family: "Lucida Grande", verdana, sans-serif;
+}
+
+h1 {
+	font-size: @bl*5;
+	margin-bottom: @bl*2;
+	line-height: 1;
+}
+
+h2 {
+	font-size: @bl*3;
+}
+
+p, ul, ol {
+	margin-bottom: @bl*3;
+}
+
+em, b {
+	font-style: italic;
+}
+
+ul, ol {
+	margin-left: 2em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+abbr[title="and"] {
+ font-family: baskerville, palatino, "Book Antiqua", serif;
+ font-style: italic;
+}
+
+
+/* Links
+-------------------------------------------------- */
+
+a:link {
+	color: @link;
+}
+
+a:visited {
+	color: lighten(desaturate(@link, 20), 20);
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: darken(saturate(@link, 20), 20);
+}
+
+
+/* Header
+-------------------------------------------------- */
+
+header {
+	position: relative;
+	padding: @bl*6 0;
+	
+	h1 {
+		font-size: @bl*8;
+		margin-bottom: @bl;
+	}
+	
+	address {
+		position: absolute;
+		right: 0;
+		top: @bl*10;
+		width: 100%-(@leftSide+@gutter);
+		
+		dl {
+			position: absolute;
+			right: 0;
+			width: @rightSide;
+			.clearfix;
+			font-size: 18px;
+			line-height: @bl*4;
+			
+			* {
+				float: left;
+			}
+		}
+		
+		dt {
+			clear: both;
+			.size(@bl*4,20px);
+			.image-replace;
+			margin-right: 10px;
+			background: url(../images/icons.png) no-repeat 0 0;
+		}
+		
+		.tel {
+			background-position: 0 4px;
+		}
+		
+		.email {
+			background-position: 0 -24px;
+		}
+	}
+}
+
+
+/* Nav
+-------------------------------------------------- */
+
+nav.fixed {
+	.fill;
+	top: @bl*25;
+	z-index: 0;
+	
+	@divider: 1px solid rgba(0,0,0,0.1);
+	
+	&.docked {
+		position: fixed;
+		top: 0;
+		padding-top: (@bl*2)+5;
+	}
+	
+	ul {
+		font-size: 13px;
+		list-style: none;
+	}
+	
+	li {
+		width: @leftSide;
+		margin-left: -8px;
+		position: relative;
+	}
+	
+	a {
+		display: block;
+		line-height: @bl*5;
+		border-top: @divider;
+		padding-left: 8px;
+		margin-right: 10px;
+		text-decoration: none;
+		.light-text;
+	}
+	
+	a:hover,
+	a:active,
+	a:focus {
+		color: #444;
+		color: rgba(0,0,0,0.75);
+	}
+	
+	ul li:last-child a {
+		border-bottom: @divider;
+	}
+	
+	ul li.current a {
+		color: black;
+		color: rgba(0,0,0,0.9);
+		border: none;
+		margin: 1px 0 0 0;
+	}
+
+	/*form triangle on end of current menu item*/
+	.current a::before,
+	.current a::after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: -9px;
+		height: 17px;
+		width: 13px;
+		.texture;
+	}
+
+	.current a::before {
+		top: -4px;
+		.rotate(-30deg);
+	}
+
+	.current a::after {
+		bottom: -5px;
+		.rotate(30deg);
+		border-left: 1px solid rgba(0,0,0,0.18);
+	}
+	
+	.current + li a {
+		border-color: transparent;
+	}
+}
+
+
+/* Main
+-------------------------------------------------- */
+
+#main {
+	margin-left: @leftSide + @gutter;
+	padding-right: @rightSide - @gutter;
+	
+	section {
+		margin-bottom: @bl*6;
+	}
+	
+	aside {
+		position: absolute;
+		right: 0;
+		width: @rightSide;
+		.clearfix;
+		margin-bottom: @bl*4;
+		margin-top: @bl;
+		
+		blockquote {
+			padding: @bl*2;
+			margin-right: 1px;
+			font-size: 14px;
+			font-style: italic;
+			line-height: @bl*3;
+			
+			p {
+				margin-bottom: @bl*3;
+			}
+			
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+		
+		.referee {
+			font-size: 12px;
+			line-height: @bl*3;
+			padding-top: @bl;
+			max-width: 90%;
+			margin-bottom: 0;
+			float: right;
+			.light-text;
+		}
+		
+		.referee::before {
+			display: block;
+			content: "";
+			border: 0 solid transparent;
+			border-width: 0 13px 13px;
+			border-right-color: #e2e2de;
+  		width:0;
+  		height:0;
+  		position: absolute;
+  		float: right;
+  		margin: -@bl 0 0 -36px;
+  		.box-shadow(1px 0 0 rgba(0,0,0,0.2));
+		}
+	}
+}
+
+
+/* About Mandy
+================================================== */
+
+#about {
+	margin-top: -@bl;
+
+	h1 {
+		display: none;
+	}
+}
+
+#bio {
+	font-size: 18px;
+	font-style: italic;
+	line-height: @bl*5;
+	background: url(../images/branch.png) no-repeat 50% 100%;
+	padding-bottom: @bl*11;
+	margin-bottom: @bl*6;
+}
+
+#bio span {
+	display: block;
+	margin-bottom: @bl*2;
+}
+
+
+/* Contact
+================================================== */
+
+#contact {
+	dl {
+		.clearfix;
+	}
+
+	dt {
+		float: left;
+		width: 6em;
+		clear: left;
+		.light-text;
+		
+		&::after {
+			content: ":";
+		}
+	}
+	
+	dd {
+		margin-bottom: @bl*2;
+		float: left;
+		
+		&[itemprop="address"] {
+			font-style: italic;
+		}
+	}
+	
+	dl span {
+		display: block;
+	}
+}
+
+
+/* Footer
+================================================== */
+
+footer {
+	margin: @bl*15 0 @bl*8 @leftSide+@gutter;
+	padding-top: @bl;
+	border-top: 1px solid rgba(0,0,0,0.15);
+	font-size: 12px;
+	color: #999;
+	color: rgba(0,0,0,0.4);
+	.clearfix;
+
+	small {
+		float: left;
+	}
+	
+	p {
+		text-align: right;
+		
+		a {
+			.image-replace;
+			float: right;
+			width: 114px;
+			height: 31px;
+			margin-top: @bl;
+			margin-left: 1ex;
+			background: url(../images/samrayner.png) no-repeat 0 0;
+			opacity: 0.35;
+			
+			&:hover,
+			&:focus {
+				opacity: 0.5;
+			}
+		}
+	}
+}

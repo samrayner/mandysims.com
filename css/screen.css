@@ -1,0 +1,465 @@
+/*
+Title:      	Large Width (Default) Screen LESS Styles
+Author:     	Sam Rayner - http://samrayner.com
+Created: 			2011-06-06
+*/
+/* LESS Helpers
+================================================== */
+/*
+  Bootstrap v1.1
+  Variables and mixins to bootstrap any new web development project.
+*/
+/* Variables
+-------------------------------------------------- */
+/* Mixins
+-------------------------------------------------- */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
+.container {
+  width: 940px;
+  margin: 0 auto;
+  zoom: 1;
+}
+.container:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+/* Variables
+-------------------------------------------------- */
+/* typography baseline height */
+/* grid gutter width */
+/* percentage of viewport width*/
+/* percentage of main width */
+/* Mixins
+-------------------------------------------------- */
+.image-replace {
+  display: block;
+  text-indent: 9999px;
+  overflow: hidden;
+}
+.fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.light-text {
+  color: #777;
+  color: rgba(0, 0, 0, 0.5);
+}
+.texture {
+  background: #fffffc url(../images/texture.png);
+}
+/* Styles
+================================================== */
+body {
+  background: #fffffc url(../images/texture.png);
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  font: 15px georgia, "Times New Roman", times, serif;
+  line-height: 24px;
+  color: #111;
+  color: rgba(0, 0, 0, 0.8);
+}
+.wrapper, nav ul {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+/* stop fixed nav overlaying content */
+nav ~ * {
+  position: relative;
+  z-index: 1;
+}
+#main section, nav {
+  /*leave a small gap at top of viewport on scroll*/
+
+  padding-top: 12px;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+nav.fixed ul li.current a, #main aside blockquote {
+  background-color: #e2e2de;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ecece9), to(#e2e2de));
+  /* Konqueror */
+
+  background-image: -moz-linear-gradient(#ecece9, #e2e2de);
+  /* FF 3.6+ */
+
+  background-image: -ms-linear-gradient(#ecece9, #e2e2de);
+  /* IE10 */
+
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ecece9), color-stop(100%, #e2e2de));
+  /* Safari 4+, Chrome 2+ */
+
+  background-image: -webkit-linear-gradient(#ecece9, #e2e2de);
+  /* Safari 5.1+, Chrome 10+ */
+
+  background-image: -o-linear-gradient(#ecece9, #e2e2de);
+  /* Opera 11.10 */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ecece9', endColorstr='#e2e2de', GradientType=0);
+  /* IE6 & IE7 */
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ecece9', endColorstr='#e2e2de', GradientType=0)";
+  /* IE8+ */
+
+  background-image: linear-gradient(#ecece9, #e2e2de);
+  /* the standard */
+
+  -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.7);
+}
+/* Typography
+-------------------------------------------------- */
+header, h1, #bio {
+  font-family: "PT Serif", georgia, "Times New Roman", times, serif;
+}
+nav, .referee, footer {
+  font-family: "Lucida Grande", verdana, sans-serif;
+}
+h1 {
+  font-size: 30px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+h2 {
+  font-size: 18px;
+}
+p, ul, ol {
+  margin-bottom: 18px;
+}
+em, b {
+  font-style: italic;
+}
+ul, ol {
+  margin-left: 2em;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+abbr[title="and"] {
+  font-family: baskerville, palatino, "Book Antiqua", serif;
+  font-style: italic;
+}
+/* Links
+-------------------------------------------------- */
+a:link {
+  color: #993366;
+}
+a:visited {
+  color: #b87a99;
+}
+a:hover, a:active, a:focus {
+  color: #570f33;
+}
+/* Header
+-------------------------------------------------- */
+header {
+  position: relative;
+  padding: 36px 0;
+}
+header h1 {
+  font-size: 48px;
+  margin-bottom: 6px;
+}
+header address {
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 82%;
+}
+header address dl {
+  position: absolute;
+  right: 0;
+  width: 38%;
+  zoom: 1;
+  font-size: 18px;
+  line-height: 24px;
+}
+header address dl:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+header address dl * {
+  float: left;
+}
+header address dt {
+  clear: both;
+  height: 24px;
+  width: 20px;
+  display: block;
+  text-indent: 9999px;
+  overflow: hidden;
+  margin-right: 10px;
+  background: url(../images/icons.png) no-repeat 0 0;
+}
+header address .tel {
+  background-position: 0 4px;
+}
+header address .email {
+  background-position: 0 -24px;
+}
+/* Nav
+-------------------------------------------------- */
+nav.fixed {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  top: 150px;
+  z-index: 0;
+  /*form triangle on end of current menu item*/
+
+}
+nav.fixed.docked {
+  position: fixed;
+  top: 0;
+  padding-top: 17px;
+}
+nav.fixed ul {
+  font-size: 13px;
+  list-style: none;
+}
+nav.fixed li {
+  width: 16%;
+  margin-left: -8px;
+  position: relative;
+}
+nav.fixed a {
+  display: block;
+  line-height: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 8px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #777;
+  color: rgba(0, 0, 0, 0.5);
+}
+nav.fixed a:hover, nav.fixed a:active, nav.fixed a:focus {
+  color: #444;
+  color: rgba(0, 0, 0, 0.75);
+}
+nav.fixed ul li:last-child a {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+nav.fixed ul li.current a {
+  color: black;
+  color: rgba(0, 0, 0, 0.9);
+  border: none;
+  margin: 1px 0 0 0;
+}
+nav.fixed .current a::before, nav.fixed .current a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -9px;
+  height: 17px;
+  width: 13px;
+  background: #fffffc url(../images/texture.png);
+}
+nav.fixed .current a::before {
+  top: -4px;
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+nav.fixed .current a::after {
+  bottom: -5px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+  border-left: 1px solid rgba(0, 0, 0, 0.18);
+}
+nav.fixed .current + li a {
+  border-color: transparent;
+}
+/* Main
+-------------------------------------------------- */
+#main {
+  margin-left: 18%;
+  padding-right: 36%;
+}
+#main section {
+  margin-bottom: 36px;
+}
+#main aside {
+  position: absolute;
+  right: 0;
+  width: 38%;
+  zoom: 1;
+  margin-bottom: 24px;
+  margin-top: 6px;
+}
+#main aside:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+#main aside blockquote {
+  padding: 12px;
+  margin-right: 1px;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 18px;
+}
+#main aside blockquote p {
+  margin-bottom: 18px;
+}
+#main aside blockquote p:last-child {
+  margin-bottom: 0;
+}
+#main aside .referee {
+  font-size: 12px;
+  line-height: 18px;
+  padding-top: 6px;
+  max-width: 90%;
+  margin-bottom: 0;
+  float: right;
+  color: #777;
+  color: rgba(0, 0, 0, 0.5);
+}
+#main aside .referee::before {
+  display: block;
+  content: "";
+  border: 0 solid transparent;
+  border-width: 0 13px 13px;
+  border-right-color: #e2e2de;
+  width: 0;
+  height: 0;
+  position: absolute;
+  float: right;
+  margin: -6px 0 0 -36px;
+  -webkit-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.2);
+}
+/* About Mandy
+================================================== */
+#about {
+  margin-top: -6px;
+}
+#about h1 {
+  display: none;
+}
+#bio {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 30px;
+  background: url(../images/branch.png) no-repeat 50% 100%;
+  padding-bottom: 66px;
+  margin-bottom: 36px;
+}
+#bio span {
+  display: block;
+  margin-bottom: 12px;
+}
+/* Contact
+================================================== */
+#contact dl {
+  zoom: 1;
+}
+#contact dl:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+#contact dt {
+  float: left;
+  width: 6em;
+  clear: left;
+  color: #777;
+  color: rgba(0, 0, 0, 0.5);
+}
+#contact dt::after {
+  content: ":";
+}
+#contact dd {
+  margin-bottom: 12px;
+  float: left;
+}
+#contact dd[itemprop="address"] {
+  font-style: italic;
+}
+#contact dl span {
+  display: block;
+}
+/* Footer
+================================================== */
+footer {
+  margin: 90px 0 48px 18%;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  color: #999;
+  color: rgba(0, 0, 0, 0.4);
+  zoom: 1;
+}
+footer:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  content: ".";
+}
+footer small {
+  float: left;
+}
+footer p {
+  text-align: right;
+}
+footer p a {
+  display: block;
+  text-indent: 9999px;
+  overflow: hidden;
+  float: right;
+  width: 114px;
+  height: 31px;
+  margin-top: 6px;
+  margin-left: 1ex;
+  background: url(../images/samrayner.png) no-repeat 0 0;
+  opacity: 0.35;
+}
+footer p a:hover, footer p a:focus {
+  opacity: 0.5;
+}

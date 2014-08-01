@@ -1,0 +1,117 @@
+/*
+Title:      	Medium Width Screen LESS Styles
+Author:     	Sam Rayner - http://samrayner.com
+Created: 			2011-06-06
+*/
+
+/* LESS Helpers
+================================================== */
+
+@import "bootstrap.less";
+
+/* Variables
+-------------------------------------------------- */
+
+@bl: 				6px; 	/* typography baseline height */
+
+
+/* OVERRIDES
+================================================== */
+
+header {
+	padding: @bl*3 0;
+
+	address {
+		position: static;
+		top: @bl*11;
+		
+		dl {
+			position: static;
+			font-size: 18px;
+			width: 100%;
+			margin: @bl*4 0 0;
+		
+			* {
+				float: left;
+			}
+		}
+		
+		dt {
+			margin: 0 10px 0 0;
+		}
+		
+		dd {
+			margin-right: 1em;
+		}
+	}
+}
+
+nav.fixed {
+	position: static;
+	.clearfix;
+	margin-bottom: @bl*3;
+	
+	&.docked {
+		position: static;
+	}
+	
+	ul {
+		margin: 0 1px 0 0;
+		width: 100%;
+	}
+	
+	li {
+		width: 49%;
+		float: left;
+		margin: @bl 0 0 0;
+	}
+	
+	li:first-child {
+		display: none;
+	}
+	
+	li:nth-child(2n-1) {
+		float: right;
+	}
+	
+	ul li a:link,
+	ul li a:visited {
+		color: black;
+		color: rgba(0,0,0,0.9);
+		border: none;
+		margin: 0;
+		#gradient > .vertical(#ecece9, #e2e2de);
+		.box-shadow(1px 1px 0 rgba(0,0,0,0.2));
+		.border-radius(2px);
+		text-shadow: 1px 1px 0 rgba(255,255,255,1);
+	}
+	
+	.current a::before,
+	.current a::after {
+		display: none;
+	}
+}
+
+#main,
+footer {
+	margin-left: 0;
+}
+
+footer {
+	margin-bottom: 0;
+
+	small {
+		margin-bottom: @bl*2;
+	}
+
+	p {
+		clear: left;
+		text-align: left;
+		float: left;
+		
+		a {
+			float: none;
+			margin: 0;
+		}
+	}
+}

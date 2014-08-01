@@ -1,0 +1,7 @@
+header address{width:100%;top:66px;}header address dl{width:50%;}header address dl *{float:right;}
+header address dt{margin:0 0 0 10px;}
+nav.fixed li{width:23%;}
+#main,footer{margin-left:25%;}
+#main{padding-right:0;}#main *+aside{margin-top:24px;}
+#main #about h1+aside{margin-top:6px;}
+#main aside{position:static;width:100%;}#main aside blockquote{font-size:15px;line-height:24px;}

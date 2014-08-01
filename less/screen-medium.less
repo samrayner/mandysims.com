@@ -1,0 +1,67 @@
+/*
+Title:      	Medium Width Screen LESS Styles
+Author:     	Sam Rayner - http://samrayner.com
+Created: 			2011-06-06
+*/
+
+/* LESS Helpers
+================================================== */
+
+/* Variables
+-------------------------------------------------- */
+
+@bl: 				6px; 	/* typography baseline height */
+@gutter: 		2%; 	/* grid gutter width */
+@leftSide: 	23%; 	/* percentage of viewport width */
+
+
+/* OVERRIDES
+================================================== */
+
+header address {
+	width: 100%;
+	top: @bl*11;
+	
+	dl {
+		width: 50%;
+	
+		* {
+			float: right;
+		}
+	}
+	
+	dt {
+		margin: 0 0 0 10px;
+	}
+}
+
+nav.fixed li {
+	width: @leftSide;
+}
+
+#main,
+footer {
+	margin-left: @leftSide + @gutter;
+}
+
+#main {
+	padding-right: 0;
+
+	* + aside {
+		margin-top: @bl*4;
+	}
+	
+	#about h1 + aside {
+		margin-top: @bl;
+	}
+
+	aside {
+		position: static;
+		width: 100%;
+		
+		blockquote {
+			font-size: 15px;
+			line-height: @bl*4;
+		}
+	}	
+}

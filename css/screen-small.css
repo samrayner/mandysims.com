@@ -1,0 +1,17 @@
+.clearfix{zoom:1;}.clearfix:after{display:block;visibility:hidden;height:0;clear:both;content:".";}
+.center-block{display:block;margin:0 auto;}
+.container{width:940px;margin:0 auto;zoom:1;}.container:after{display:block;visibility:hidden;height:0;clear:both;content:".";}
+header{padding:18px 0;}header address{position:static;top:66px;}header address dl{position:static;font-size:18px;width:100%;margin:24px 0 0;}header address dl *{float:left;}
+header address dt{margin:0 10px 0 0;}
+header address dd{margin-right:1em;}
+nav.fixed{position:static;zoom:1;margin-bottom:18px;}nav.fixed:after{display:block;visibility:hidden;height:0;clear:both;content:".";}
+nav.fixed.docked{position:static;}
+nav.fixed ul{margin:0 1px 0 0;width:100%;}
+nav.fixed li{width:49%;float:left;margin:6px 0 0 0;}
+nav.fixed li:first-child{display:none;}
+nav.fixed li:nth-child(2n-1){float:right;}
+nav.fixed ul li a:link,nav.fixed ul li a:visited{color:black;color:rgba(0, 0, 0, 0.9);border:none;margin:0;background-color:#e2e2de;background-repeat:repeat-x;background-image:-khtml-gradient(linear, left top, left bottom, from(#ecece9), to(#e2e2de));background-image:-moz-linear-gradient(#ecece9, #e2e2de);background-image:-ms-linear-gradient(#ecece9, #e2e2de);background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #ecece9), color-stop(100%, #e2e2de));background-image:-webkit-linear-gradient(#ecece9, #e2e2de);background-image:-o-linear-gradient(#ecece9, #e2e2de);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ecece9', endColorstr='#e2e2de', GradientType=0);-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr='#ecece9', endColorstr='#e2e2de', GradientType=0)";background-image:linear-gradient(#ecece9, #e2e2de);-webkit-box-shadow:1px 1px 0 rgba(0, 0, 0, 0.2);-moz-box-shadow:1px 1px 0 rgba(0, 0, 0, 0.2);box-shadow:1px 1px 0 rgba(0, 0, 0, 0.2);-moz-border-radius:2px;border-radius:2px;text-shadow:1px 1px 0 #ffffff;}
+nav.fixed .current a::before,nav.fixed .current a::after{display:none;}
+#main,footer{margin-left:0;}
+footer{margin-bottom:0;}footer small{margin-bottom:12px;}
+footer p{clear:left;text-align:left;float:left;}footer p a{float:none;margin:0;}
