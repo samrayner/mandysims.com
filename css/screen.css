@@ -385,6 +385,7 @@ nav.fixed .current + li a {
   font-style: italic;
   line-height: 30px;
   background: url(../images/branch.png) no-repeat 50% 100%;
+  background-size: 52px 33px;
   padding-bottom: 66px;
   margin-bottom: 36px;
 }
